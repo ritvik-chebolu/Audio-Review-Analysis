@@ -12,8 +12,11 @@ def get_recorder():
 
 recorder = get_recorder()
 
+key = st.secrets["3b545c6f46344c0cbb27866cbc3afa58"]
+client = assemblyai.Client(key)
+
 # Set up the client with your API key
-client = assemblyai.Client(api_key="YOUR_API_KEY_HERE")
+client = assemblyai.Client(key)
 
 # Load a BERT model for sentiment analysis
 model = transformers.BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=3)
